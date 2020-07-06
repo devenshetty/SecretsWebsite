@@ -8,6 +8,7 @@ const encrypt = require("mongoose-encryption");
 
 const app = express();
 
+//connecting to mongoose
 mongoose.connect("mongodb://localhost:27017/userDB",  { useNewUrlParser: true , useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -68,7 +69,7 @@ app.post("/login", function(req,res){
   });
 });
 
-
+//to start the server on localhost:3000
 app.listen("3000", function(req,res){
   console.log("Server has started at port 3000.");
 });
